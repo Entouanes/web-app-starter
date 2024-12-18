@@ -1,1 +1,2 @@
-# static-web-app-starter
+# web-app-starter
+TODO: add instructions
