@@ -1,24 +1,13 @@
-<script lang="ts">
+<script>
 	import '../app.css';
-	let { children } = $props();
-	let connected = $state(false);
-    let api_endpoint = import.meta.env.VITE_API_ENDPOINT;
-
-	async function callRoot() {
-        try {
-            const response = await fetch(api_endpoint);
-            connected = response.ok;
-            console.log(response.ok)
-        } catch (error) {
-            connected = false;
-        }
-    }
+    let { children, data } = $props();
+    const { healthStatus } = data;
 </script>
 
 <div class="bg-base-200 mx-auto my-5 container rounded-box p-5">
   <div class="flex justify-between items-center">
-    <button class="btn btn-ghost text-xl font-bold" onclick={callRoot}>Contoso</button>
-	{#if connected}
+    <p class="btn btn-ghost text-xl font-bold">Contoso</p>
+	{#if healthStatus}
         <span class="badge badge-success">Connected</span>
     {:else}
         <span class="badge">Disconnected</span>
