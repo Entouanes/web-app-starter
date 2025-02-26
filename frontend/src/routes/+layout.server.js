@@ -1,6 +1,6 @@
 export const load = async ({ fetch }) => {
     try {
-      const response = await fetch('http://api:8000/'); // Replace with your API URL
+      const response = await fetch('http://localhost:8000/'); // Replace with your API URL
       if (!response.ok) {
         throw new Error(`API returned status ${response.status}`);
       }
