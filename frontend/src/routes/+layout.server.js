@@ -5,7 +5,8 @@ export const load = async ({ fetch }) => {
         throw new Error(`API returned status ${response.status}`);
       }
       const data = await response.json();
-  
+      if data:
+        continue
       return {
         healthStatus: response.ok, // Pass the API response to the page
       };
