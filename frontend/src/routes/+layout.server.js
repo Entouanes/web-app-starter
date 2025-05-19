@@ -5,8 +5,11 @@ export const load = async ({ fetch }) => {
         throw new Error(`API returned status ${response.status}`);
       }
       const data = await response.json();
-      if data:
-        continue
+      if (!data) {
+        return {
+          healthStatus: { error: 'No data received from API' }, // Handle missing data
+        };
+      }
       return {
         healthStatus: response.ok, // Pass the API response to the page
       };
